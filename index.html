@@ -7,18 +7,16 @@
     <link rel="stylesheet" href="build/css/index.min.css">
 </head>
 <body>
-<header class="header">
+<header class="header header_shadow">
     <div class="header__container container">
-        <div class="header__content header__content_top">
+        <div class="header__content">
             <img src="build/img/logo.svg" alt="logo" class="header__logo logo">
             <div class="profile header__profile">
                 <div class="profile__user">
                     <p class="profile__name">Arthur Wood</p>
+                    <img src="build/img/profile/profile_picture.png" alt="profile_picture" class="profile__picture">
                     <a href="#" class="profile__link">
-                        <img src="build/img/profile/profile_picture.png" alt="profile_picture" class="profile__picture">
-                    </a>
-                    <a href="#">
-                        <img src="build/img/profile/a_icon_arrow.svg" alt="arrow" class="profile__arrow">
+                        <img src="build/img/profile/a_icon_arrow.svg" alt="arrow">
                     </a>
                 </div>
                 <div class="icons profile__icons">
@@ -34,15 +32,13 @@
                 </div>
             </div>
         </div>
-        <div class="header__content header__content_bottom ">
-            <nav class="header__menu menu">
+        <div class="header__content">
+            <nav class="menu">
                 <a href="#" class="menu__link menu__link_active">FEED</a>
                 <a href="#" class="menu__link">EXPLORE</a>
                 <a href="#" class="menu__link">DISCUSSIONS</a>
             </nav>
             <div class="header__button action-button">
-                <div class="action-button__vertical"></div>
-                <div class="action-button__horizontal"></div>
             </div>
         </div>
     </div>
@@ -57,9 +53,9 @@
                 <div class="user__info">
                     <h3 class="user__name">Benjamin Clementine</h3>
                     <p class="user__nickname">@benclementine</p>
-                    <div class="user__edit edit">
-                        <img src="build/img/user/edit_icon.svg" alt="icon" class="edit__icon">
-                        <a href="#" class="edit__text edit__text_red">Edit Profile</a>
+                    <div class="user__edit">
+                        <img src="build/img/user/edit_icon.svg" alt="icon" class="user__edit-icon">
+                        <a href="#" class="user__edit-text">Edit Profile</a>
                     </div>
                 </div>
             </div>
@@ -82,8 +78,8 @@
                 each, according to CoinMarketCap. Here is the latest Ripple price news and live updates on XRP, bitcoin
                 and Ethereum.
             </p>
-            <div class="user__popup popup">
-                <img src="build/img/user/icon_3dots.svg" alt="dots" class="popup__icon">
+            <div class="user__popup popup" onclick={togglePopup()}>
+                <img src="build/img/user/icon_3dots.svg" alt="dots" class="popup__dots">
                 <div class="popup__content">
                     <div class="popup__row popup__row_hover">
                         <img src="build/img/user/icon_report.svg" alt="icon" class="popup__icon">
@@ -107,67 +103,75 @@
             </div>
             <div class="cards__area">
                 <div class="cards__card card">
-                    <h1 class="card__title">New air routes that promise cheap flights in</h1>
-                    <div class="card__footer">
-                        <div class="card__profile">
-                            <div class="card__avatar"></div>
-                            <p class="card__author">Gregory Watkins</p>
-                        </div>
-                        <a href="#" class="card__link">Share</a>
-                    </div>
-                </div>
-                <div class="cards__card card">
-                    <h1 class="card__title">New air routes that promise cheap flights in</h1>
-                    <div class="card__footer">
-                        <div class="card__profile">
-                            <div class="card__avatar"></div>
-                            <p class="card__author">Gregory Watkins</p>
-                        </div>
-                        <a href="#" class="card__link">Share</a>
-                    </div>
-                </div>
-                <div class="cards__card card">
-                    <div class="card__header">
-                        <p class="card__header-text">Shared to</p>
-                        <span class="card__tag">#discussionaboutanimgttdddasdasdasdasdasdasdassads</span>
-                    </div>
-                    <h1 class="card__title">New air routes that promise cheap flights in</h1>
-                    <div class="card__footer">
-                        <div class="card__profile">
-                            <div class="card__avatar"></div>
-                            <p class="card__author">Gregory Watkins</p>
-                        </div>
-                        <div class="card__stats">
-                            <div class="card__views">
-                                <img src="build/img/card/icon_view.svg" alt="view-icon" class="card__view-icon">
-                                <p class="card__counter">88</p>
+                    <div class="card__wrapper">
+                        <h1 class="card__title">New air routes that promise cheap flights in</h1>
+                        <div class="card__footer">
+                            <div class="card__profile">
+                                <div class="card__avatar"></div>
+                                <p class="card__author">Gregory Watkins</p>
                             </div>
-                            <div class="card__likes">
-                                <button class="card__like card__like_active"></button>
-                                <p class="card__counter">24</p>
-                            </div>
+                            <a href="#" class="card__link">Share</a>
                         </div>
                     </div>
                 </div>
                 <div class="cards__card card">
-                    <div class="card__header">
-                        <img src="build/img/card/icon_link.svg" alt="link-icon" class="card__link-icon">
-                        <p class="card__header-text">Shared via weblink</p>
-                    </div>
-                    <h1 class="card__title">New air routes that promise cheap flights in</h1>
-                    <div class="card__footer">
-                        <div class="card__profile">
-                            <div class="card__avatar"></div>
-                            <p class="card__author">Gregory Watkins</p>
-                        </div>
-                        <div class="card__stats">
-                            <div class="card__views">
-                                <img src="build/img/card/icon_view.svg" alt="view-icon" class="card__view-icon">
-                                <p class="card__counter">88</p>
+                    <div class="card__wrapper">
+                        <h1 class="card__title">New air routes that promise cheap flights in</h1>
+                        <div class="card__footer">
+                            <div class="card__profile">
+                                <div class="card__avatar"></div>
+                                <p class="card__author">Gregory Watkins</p>
                             </div>
-                            <div class="card__likes">
-                                <button class="card__like card__like_active"></button>
-                                <p class="card__counter">24</p>
+                            <a href="#" class="card__link">Share</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards__card card">
+                    <div class="card__wrapper">
+                        <div class="card__header">
+                            <p class="card__header-text">Shared to</p>
+                            <span class="card__tag">#discussionaboutanimgttdddasdasdasdasdasdasdassads</span>
+                        </div>
+                        <h1 class="card__title">New air routes that promise cheap flights in</h1>
+                        <div class="card__footer">
+                            <div class="card__profile">
+                                <div class="card__avatar"></div>
+                                <p class="card__author">Gregory Watkins</p>
+                            </div>
+                            <div class="card__stats">
+                                <div class="card__views">
+                                    <img src="build/img/card/icon_view.svg" alt="view-icon" class="card__view-icon">
+                                    <p class="card__counter">88</p>
+                                </div>
+                                <div class="card__likes">
+                                    <button class="card__like card__like_active"></button>
+                                    <p class="card__counter">24</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards__card card">
+                    <div class="card__wrapper">
+                        <div class="card__header">
+                            <img src="build/img/card/icon_link.svg" alt="link-icon" class="card__link-icon">
+                            <p class="card__header-text">Shared via weblink</p>
+                        </div>
+                        <h1 class="card__title">New air routes that promise cheap flights in</h1>
+                        <div class="card__footer">
+                            <div class="card__profile">
+                                <div class="card__avatar"></div>
+                                <p class="card__author">Gregory Watkins</p>
+                            </div>
+                            <div class="card__stats">
+                                <div class="card__views">
+                                    <img src="build/img/card/icon_view.svg" alt="view-icon" class="card__view-icon">
+                                    <p class="card__counter">88</p>
+                                </div>
+                                <div class="card__likes">
+                                    <button class="card__like card__like_active"></button>
+                                    <p class="card__counter">24</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -176,5 +180,12 @@
         </div>
     </div>
 </main>
+<div class="background"></div>
+<script>
+    function togglePopup() {
+        const popup = document.querySelector(".popup__content");
+        popup.classList.toggle("show");
+    }
+</script>
 </body>
 </html>

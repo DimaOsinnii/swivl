@@ -1,0 +1,48 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  font-size: @text-size-m;
+  &__wrapper {
+    padding: 24px;
+    margin: 12px;
+    background-color: @color-white;
+    border-radius: 8px;
+    box-shadow: 0 24px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  &__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__header-text {
+    margin: 0;
+  }
+
+  &__tag {
+    display: block;
+    max-width: 247px;
+    padding: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background-color: @body-color;
+    border-radius: 6px;
+    font-weight: 600;
+
+  }
+
+  &__footer {
+    display: flex;
+  }
+
+  &__stats {
+    display: flex;
+  }
+  &__views, &__likes {
+    display: flex;
+    align-items: center;
+  }
+}

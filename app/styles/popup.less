@@ -1,0 +1,45 @@
+.popup {
+  position: absolute;
+
+  &__dots {
+    cursor: pointer;
+  }
+
+  &__content {
+    position: absolute;
+    top: 42px;
+    left: 2px;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 0;
+    background-color: @color-white;
+    border-radius: 8px;
+    font-weight: 600;
+    visibility: hidden;
+
+    &.show {
+      visibility: visible;
+      animation: appear 0.5s;
+    }
+  }
+
+  &__row {
+    display: flex;
+    padding: 8px 23px;
+
+    &:hover {
+      background-color: @body-color;
+      backdrop-filter: blur(54.3656px);
+      cursor: pointer;
+    }
+  }
+
+  &__icon {
+    margin-right: 15px;
+  }
+
+  &__text {
+    white-space: nowrap;
+    margin: 0;
+  }
+}

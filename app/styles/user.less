@@ -1,0 +1,67 @@
+.user {
+  position: relative;
+max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'OpenSans', sans-serif;
+  margin-right: 36px;
+  font-weight: 400;
+  font-size: @text-size-m;
+  color: @color-user;
+
+
+  &__details {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+
+  &__avatar {
+    margin-right: 25px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.5em;
+    margin: 0 0 8px 0;
+  }
+
+  &__nickname {
+    margin: 0 0 16px 0;
+    letter-spacing: -0.5px;
+  }
+
+  &__edit {
+    display: flex;
+  }
+
+  &__edit-icon {
+    margin-right: 7px;
+  }
+
+  &__edit-text {
+    color: @pastel-red;
+  }
+
+  &__connections {
+    padding-left: 4px;
+    margin-bottom: 26px;
+  }
+
+  &__description {
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  &__popup {
+    right: 15px;
+  }
+
+}

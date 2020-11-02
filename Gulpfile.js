@@ -24,20 +24,26 @@ function addStyles(paths, outputFilename) {
         dest('./build/css'),
         browserSync.stream(),
     );
-};
+}
 
 
 function styles() {
     return addStyles([
         './node_modules/normalize.css/normalize.css',
-        './app/styles/*.less',
+        './app/styles/index.less',
     ], 'index.css');
-};
+}
 
+function fonts() {
+    return pipeline(
+        src('./app/fonts/**'),
+        dest('./build/fonts')
+    )
+}
 
 function clean() {
     return del(['build/*']);
-};
+}
 
 
 function html() {
@@ -45,15 +51,15 @@ function html() {
         src('index.html'),
         browserSync.stream(),
     );
-};
+}
 
 function img() {
     return pipeline(
         src('./app/images/**'),
         dest('./build/img'),
         browserSync.stream(),
-    )
-};
+    );
+}
 
 function watcher() {
     browserSync.init({
@@ -66,7 +72,7 @@ function watcher() {
     });
 
     watch('index.html', html);
-    watch('./app/styles/index.less', styles);
+    watch('./app/styles/*.less', styles);
     watch('./app/images/*');
     watch("/index.html").on('change', browserSync.reload);
 }
@@ -75,5 +81,5 @@ function watcher() {
 task('styles', styles);
 task('del', clean);
 task('watch', watcher);
-task('build', series(clean, styles, img));
+task('build', series(clean, styles, img, fonts));
 task('dev', series('build', watcher));

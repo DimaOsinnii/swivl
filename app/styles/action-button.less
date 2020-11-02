@@ -1,0 +1,31 @@
+.action-button {
+  position: absolute;
+  top: 7px;
+  right: 5px;
+  width: 64px;
+  height: 64px;
+  background: @gradient;
+  border-radius: 50%;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 2px;
+    background-color: @color-white;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 2px;
+    height: 20px;
+    background-color: @color-white;
+  }
+}

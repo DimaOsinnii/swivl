@@ -1,0 +1,28 @@
+.menu {
+  display: flex;
+  font-size: 0.87em;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  &__link {
+    margin-right: 37px;
+    color: @color-text;
+    text-decoration: none;
+    opacity: 0.6;
+
+    &_active {
+      position: relative;
+      opacity: 1;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 35px;
+        left: 0;
+        width: 34px;
+        height: 4px;
+        background: @gradient;
+      }
+    }
+  }
+}
