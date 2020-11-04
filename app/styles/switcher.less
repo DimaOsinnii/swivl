@@ -1,8 +1,14 @@
 .switcher {
   display: flex;
   align-items: center;
-  padding-left: 11px;
+  padding-left: 24px;
+  font-family: 'OpenSans', sans-serif;
   font-size: @text-size-m;
+
+  @media screen and (max-width: @large) {
+    padding: 0;
+    justify-content: center;
+  }
 
   &__text {
     margin: 0;

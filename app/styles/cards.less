@@ -2,12 +2,21 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  font-family: 'OpenSans', sans-serif;
-  font-size: @text-size-m;
+  padding: 0 3px 0 35px;
+  margin-bottom: 50px;
+
+  @media screen and (max-width: @large) {
+    flex-basis: 50%;
+    flex-grow: 0;
+    padding: 0;
+  }
 
   &__area {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+  }
+  &__switcher {
+    margin-bottom: 50px;
   }
 }

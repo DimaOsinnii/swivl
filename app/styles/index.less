@@ -2,14 +2,26 @@
 @import "mixins";
 @import "fonts";
 @import "animations";
+@import (inline) "mobile-menu.css";
+
+body {
+  position: relative;
+}
 
 * {
   box-sizing: border-box;
 }
 
+.overflow {
+  overflow: hidden;
+  position: relative;
+}
+
+
 /*Body container*/
 @import "background";
 @import "container";
+@import "copyright";
 
 /*Header*/
 @import "header";
@@ -30,4 +42,7 @@
 @import "cards";
 @import "card";
 @import "switcher";
+
+
+
 

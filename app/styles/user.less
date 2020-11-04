@@ -1,20 +1,45 @@
 .user {
-  position: relative;
-max-width: 350px;
   display: flex;
-  flex-direction: column;
   font-family: 'OpenSans', sans-serif;
-  margin-right: 36px;
   font-weight: 400;
+  max-width: 350px;
   font-size: @text-size-m;
   color: @color-user;
+  @media screen and (max-width: @large) {
+    flex-basis: 50%;
+    max-width: 100%;
+    justify-content: center;
+  }
+  @media screen and (max-width: @medium) {
+    margin-bottom: 50px;
+  }
 
+  @media screen and (max-width: @small) {
+    font-size: @text-size-s;
+  }
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 350px;
+    @media screen and (max-width: @medium) {
+      align-items: center;
+      text-align: center;
+    }
+    @media screen and (max-width: @small) {
+      flex-basis: 300px;
+    }
+  }
 
   &__details {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     margin-bottom: 32px;
+    @media screen and (max-width: @small) {
+      align-items: center;
+    }
   }
 
   &__avatar {
@@ -40,10 +65,19 @@ max-width: 350px;
 
   &__edit {
     display: flex;
+    @media screen and (max-width: @medium) {
+      justify-content: center;
+    }
   }
 
   &__edit-icon {
     margin-right: 7px;
+    @media screen and (max-width: @medium) {
+      position: absolute;
+      margin-right: 0;
+      left: 50%;
+      transform: translateX(50%);
+    }
   }
 
   &__edit-text {
@@ -53,6 +87,9 @@ max-width: 350px;
   &__connections {
     padding-left: 4px;
     margin-bottom: 26px;
+    @media screen and (max-width: @medium) {
+      padding: 0;
+    }
   }
 
   &__description {
@@ -62,6 +99,9 @@ max-width: 350px;
 
   &__popup {
     right: 15px;
+    @media screen and (max-width: @medium) {
+      right: 0;
+    }
   }
 
 }

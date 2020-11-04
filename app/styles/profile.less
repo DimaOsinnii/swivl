@@ -1,12 +1,24 @@
 .profile {
   display: flex;
   align-items: center;
+  @media screen and (max-width: @small) {
+    flex-direction: column;
+    padding: 10px;
+  }
 
   &__user {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-right: 17px;
+    @media screen and (max-width: @small) {
+      margin: 0;
+      width: 100%;
+      padding: 10px;
+      background-color: @color-white;
+      border-radius: 5px 5px 0 0;
+      border-bottom: 1px solid @body-color;
+    }
   }
 
   &__name {
@@ -14,6 +26,9 @@
     margin: 0 21px 0 0;
     color: @color-user;
     letter-spacing: -0.5px;
+    @media screen and (max-width: @small) {
+      flex-grow: 1;
+    }
   }
 
   &__picture {

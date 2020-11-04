@@ -5,10 +5,13 @@
   font-weight: 600;
 
   &__link {
-    margin-right: 37px;
     color: @color-text;
     text-decoration: none;
     opacity: 0.6;
+
+    &:not(:last-child) {
+      margin-right: 37px;
+    }
 
     &_active {
       position: relative;
@@ -23,6 +26,13 @@
         height: 4px;
         background: @gradient;
       }
+    }
+
+    &:not(&_active):hover {
+      transition: 0.3s;
+      background: @gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
 }

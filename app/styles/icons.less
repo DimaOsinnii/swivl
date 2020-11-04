@@ -1,7 +1,36 @@
 .icons {
   display: flex;
+  @media screen and (max-width: @small) {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 10px 10px 10px;
+    background-color: @color-white;
+    border-radius: 0 0 5px 5px ;
+  }
 
   &__link {
     text-decoration: none;
+    text-align: right;
+    position: relative;
+
+    @media screen and (max-width: @small) {
+      &:before {
+        content: "Notifications";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        color: @color-text;
+      }
+
+      &:nth-child(2):before {
+        content: "Gifts";
+      }
+
+      &:last-child:before {
+        content: "Medium";
+      }
+    }
+
   }
 }
